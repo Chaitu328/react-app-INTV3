@@ -33,15 +33,17 @@ function Dictionary() {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
+      <h3>Definition:</h3>
       {/* Conditionally render the result */}
-      {result && (
-        <div>
-          <h3>Definition:</h3>
-          <p>
+      <p>
+        {result ? (
+          <span>
             <strong>{result.word}</strong>: {result.meaning}
-          </p>
-        </div>
-      )}
+          </span>
+        ) : (
+          <span>Type a word and click search to see its meaning.</span>
+        )}
+      </p>
     </div>
   );
 }
