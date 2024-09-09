@@ -1,10 +1,12 @@
-import Dictionary from "./components/Xdictionary";
+// import Dictionary from "./components/Xdictionary";
+import Table from "./components/XTable";
 
 function App() {
   return (
-      <div>
-        <Dictionary/>
-      </div>
+    <div>
+      {/* <Dictionary/> */}
+      <Table />
+    </div>
   );
 }
 
