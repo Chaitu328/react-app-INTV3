@@ -69,11 +69,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-Yes, you’ve summarized the three common ways to use CSS in React accurately. Let’s break them down:
+# We summarized the three common ways to use CSS in React.
 
 ### 1. **Inline Styles**
 
-Inline styles are specified directly in the component using a JavaScript object. These styles are applied to elements using the `style` attribute. They don’t require a CSS file and are scoped to the component.
+We use inline styles by specifying them directly in the component with a JavaScript object. These styles are applied using the `style` attribute and are scoped to the component.
 
 **Example:**
 
@@ -109,7 +109,7 @@ function MyComponent() {
 
 ### 2. **CSS Modules**
 
-CSS Modules allow for modular and scoped CSS. You import the CSS file as an object, where each class name is a property of the object. This avoids global scope issues and prevents class name collisions.
+We use CSS Modules for modular and scoped CSS. We import the CSS file as an object, where each class name is a property of that object. This approach helps avoid global scope issues and class name collisions.
 
 **File: `Xmodel.module.css`**
 
@@ -152,7 +152,7 @@ function MyComponent() {
 
 ### 3. **Global CSS**
 
-Global CSS involves importing a regular CSS file. This method applies styles globally across the application. This approach does not scope styles to components, which can lead to potential conflicts if not managed carefully.
+We use global CSS by importing a regular CSS file. This method applies styles globally across the application. It does not scope styles to components, which can lead to potential conflicts if not managed carefully.
 
 **File: `styles.css`**
 
@@ -195,8 +195,8 @@ function MyComponent() {
 
 ### Summary:
 
-1. **Inline Styles:** Use JavaScript objects to define styles directly in the component.
-2. **CSS Modules:** Use CSS files imported as objects, providing scoped and modular styles.
-3. **Global CSS:** Import a regular CSS file to apply global styles throughout the application.
+1. **Inline Styles:** We use JavaScript objects to define styles directly in the component.
+2. **CSS Modules:** We use CSS files imported as objects, providing scoped and modular styles.
+3. **Global CSS:** We import a regular CSS file to apply global styles throughout the application.
 
-Each method has its own use cases and benefits depending on the needs of your project.
+Each method has its own use cases and benefits depending on the needs of our project.
