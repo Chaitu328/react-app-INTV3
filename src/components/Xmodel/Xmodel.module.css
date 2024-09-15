@@ -15,7 +15,7 @@
 
 /* Modal container */
 .modal {
-    display: block; /* The modal is hidden by default; controlled via inline styles */
+    display: none; /* Hidden by default; controlled via React state */
     position: fixed;
     z-index: 1;
     left: 0;
@@ -25,10 +25,6 @@
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
-    /* Flex styling for centering */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* Modal content */
@@ -39,5 +35,25 @@
     text-align: center;
     max-width: 500px;
     margin: auto;
-    position: relative;
+}
+
+/* Form item styling */
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Submit button */
+.submit-button {
+    margin-top: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
 }
