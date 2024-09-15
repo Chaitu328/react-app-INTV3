@@ -32,7 +32,7 @@
 }
 
 /* Modal content */
-.modalContent {
+.modal-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -42,7 +42,7 @@
 }
 
 /* Form item styling */
-.formItem {
+.form-item {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
@@ -51,7 +51,7 @@
 }
 
 /* Submit button */
-.submitButton {
+.submit-button {
     margin-top: 10px;
     background-color: blue;
     color: white;

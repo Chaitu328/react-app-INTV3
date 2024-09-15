@@ -34,9 +34,11 @@ function Model() {
             return;
         }
 
-        // Date of Birth validation: Check if it's not empty (or you can add custom logic)
-        if (!dob) {
-            alert('Invalid Date of Birth. Please enter a valid date.');
+        // Date of Birth validation: Check if it's a future date
+        const today = new Date();
+        const inputDate = new Date(dob);
+        if (inputDate >= today) {
+            alert('Invalid date of birth. Please enter a valid date.');
             return;
         }
 
@@ -57,32 +59,32 @@ function Model() {
             {isModalOpen && (
                 <div className={styles.modal} onClick={closeModal}>
                     <div
-                        className={styles.modalContent}
+                        className={styles['modal-content']}
                         onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside content
                     >
                         <h2>Fill Your Details</h2>
                         <form onSubmit={validateForm} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
-                            <div className={styles.formItem}>
+                            <div className={styles['form-item']}>
                                 <label htmlFor="username">Username:</label>
                                 <input type="text" name="username" id="username" />
                             </div>
 
-                            <div className={styles.formItem}>
+                            <div className={styles['form-item']}>
                                 <label htmlFor="email">Email Address:</label>
                                 <input type="email" name="email" id="email" />
                             </div>
 
-                            <div className={styles.formItem}>
+                            <div className={styles['form-item']}>
                                 <label htmlFor="phone">Phone Number:</label>
                                 <input type="text" name="phone" id="phone" />
                             </div>
 
-                            <div className={styles.formItem}>
+                            <div className={styles['form-item']}>
                                 <label htmlFor="dob">Date of Birth:</label>
                                 <input type="date" name="dob" id="dob" />
                             </div>
 
-                            <button type="submit" className={styles.submitButton}>
+                            <button type="submit" className={styles['submit-button']}>
                                 Submit
                             </button>
                         </form>
