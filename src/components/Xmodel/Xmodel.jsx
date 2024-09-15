@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Xmodel.module.css';
+import './Xmodel.module.css'; // Import the CSS module
 
 function Model() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,39 +52,39 @@ function Model() {
             {/* OpenForm Section */}
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <h1>User Details Model</h1>
-                <button className={styles.openFormButton} onClick={openModal}>Open Form</button>
+                <button className="openFormButton" onClick={openModal}>Open Form</button>
             </div>
 
             {/* Modal Section */}
             {isModalOpen && (
-                <div className={styles.modal} onClick={closeModal}>
+                <div className="modal" onClick={closeModal}>
                     <div
-                        className={styles['modal-content']}
+                        className="modal-content"
                         onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside content
                     >
                         <h2>Fill Your Details</h2>
                         <form onSubmit={validateForm} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
-                            <div className={styles['form-item']}>
+                            <div className="form-item">
                                 <label htmlFor="username">Username:</label>
                                 <input type="text" name="username" id="username" />
                             </div>
 
-                            <div className={styles['form-item']}>
+                            <div className="form-item">
                                 <label htmlFor="email">Email Address:</label>
                                 <input type="email" name="email" id="email" />
                             </div>
 
-                            <div className={styles['form-item']}>
+                            <div className="form-item">
                                 <label htmlFor="phone">Phone Number:</label>
                                 <input type="text" name="phone" id="phone" />
                             </div>
 
-                            <div className={styles['form-item']}>
+                            <div className="form-item">
                                 <label htmlFor="dob">Date of Birth:</label>
                                 <input type="date" name="dob" id="dob" />
                             </div>
 
-                            <button type="submit" className={styles['submit-button']}>
+                            <button type="submit" className="submit-button">
                                 Submit
                             </button>
                         </form>
