@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import './Xmodel.module.css'; // Import the CSS module
+import styles from './Xmodel.module.css'; // Import the CSS module
 
 function Model() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // Open form modal
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    // Close form modal
-    const closeModal = () => {
+    const handleClose = () => {
         setIsModalOpen(false);
     };
 
-    // Email and phone validation
+    const handleOpen = () => {
+        setIsModalOpen(true);
+    };
+
     const validateForm = (e) => {
         e.preventDefault();
         const email = document.getElementById('email').value;
@@ -34,7 +31,7 @@ function Model() {
             return;
         }
 
-        // Date of Birth validation: Check if it's a future date
+        // Date of Birth validation: Check if it's a past date
         const today = new Date();
         const inputDate = new Date(dob);
         if (inputDate >= today) {
@@ -44,55 +41,63 @@ function Model() {
 
         // Form is valid, you can handle the submission logic here
         alert('Form submitted successfully!');
-        closeModal();
+        handleClose(); // Close the modal on successful form submission
     };
 
     return (
-        <div>
-            {/* OpenForm Section */}
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                <h1>User Details Model</h1>
-                <button className="openFormButton" onClick={openModal}>Open Form</button>
-            </div>
-
-            {/* Modal Section */}
-            {isModalOpen && (
-                <div className="modal" onClick={closeModal}>
-                    <div
-                        className="modal-content"
-                        onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside content
-                    >
-                        <h2>Fill Your Details</h2>
-                        <form onSubmit={validateForm} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
-                            <div className="form-item">
-                                <label htmlFor="username">Username:</label>
-                                <input type="text" name="username" id="username" />
-                            </div>
-
-                            <div className="form-item">
-                                <label htmlFor="email">Email Address:</label>
-                                <input type="email" name="email" id="email" />
-                            </div>
-
-                            <div className="form-item">
-                                <label htmlFor="phone">Phone Number:</label>
-                                <input type="text" name="phone" id="phone" />
-                            </div>
-
-                            <div className="form-item">
-                                <label htmlFor="dob">Date of Birth:</label>
-                                <input type="date" name="dob" id="dob" />
-                            </div>
-
-                            <button type="submit" className="submit-button">
-                                Submit
-                            </button>
-                        </form>
+        <div className={styles.container}>
+            <h1 className={styles.title}>User Details Model</h1>
+            <button className={styles.openFormButton} onClick={handleOpen}>
+                Open Form
+            </button>
+            <Modal isOpen={isModalOpen} onClose={handleClose}>
+                <h2>Fill Your Details</h2>
+                <form onSubmit={validateForm} className={styles.form}>
+                    <div className={styles.formItem}>
+                        <label htmlFor="username">Username:</label>
+                        <input type="text" name="username" id="username" />
                     </div>
-                </div>
-            )}
+
+                    <div className={styles.formItem}>
+                        <label htmlFor="email">Email Address:</label>
+                        <input type="email" name="email" id="email" />
+                    </div>
+
+                    <div className={styles.formItem}>
+                        <label htmlFor="phone">Phone Number:</label>
+                        <input type="text" name="phone" id="phone" />
+                    </div>
+
+                    <div className={styles.formItem}>
+                        <label htmlFor="dob">Date of Birth:</label>
+                        <input type="date" name="dob" id="dob" />
+                    </div>
+
+                    <button type="submit" className={styles.submitButton}>
+                        Submit
+                    </button>
+                </form>
+            </Modal>
         </div>
     );
 }
+
+const Modal = ({ isOpen, onClose, children }) => {
+    if (!isOpen) return null;
+
+    return (
+        <div
+            onClick={onClose}
+            className={styles.modal}
+        >
+            <div
+                className={styles['modal-content']}
+                onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside content
+            >
+                {children}
+            </div>
+        </div>
+    );
+};
 
 export default Model;
