@@ -34,7 +34,7 @@ function Model() {
             return;
         }
 
-        // Date of Birth validation: Check if it's a future date
+        // Date of Birth validation: Check if it's a valid past date
         const today = new Date();
         const inputDate = new Date(dob);
         if (inputDate >= today) {

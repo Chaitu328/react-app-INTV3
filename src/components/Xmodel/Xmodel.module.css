@@ -39,25 +39,5 @@
     text-align: center;
     max-width: 500px;
     margin: auto;
-}
-
-/* Form item styling */
-.form-item {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    width: 100%;
-    max-width: 300px;
-}
-
-/* Submit button */
-.submit-button {
-    margin-top: 10px;
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    text-align: center;
+    position: relative;
 }
