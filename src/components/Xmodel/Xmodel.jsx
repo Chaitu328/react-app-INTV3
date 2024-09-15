@@ -73,7 +73,7 @@ function Model() {
                         <input type="date" name="dob" id="dob" />
                     </div>
 
-                    <button type="submit" className={styles.submitButton}>
+                    <button type="submit" className={styles['submit-button']}>
                         Submit
                     </button>
                 </form>
