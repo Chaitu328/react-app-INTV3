@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Xmodel.module.css'; // Import the CSS module
+import './Xmodel.css'; // Import the CSS module
 
 function Model() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,35 +45,35 @@ function Model() {
     };
 
     return (
-        <div className={styles.container}>
-            <h1 className={styles.title}>User Details Model</h1>
-            <button className={styles.openFormButton} onClick={handleOpen}>
+        <div className="container">
+            <h1 className="title">User Details Model</h1>
+            <button className="openFormButton" onClick={handleOpen}>
                 Open Form
             </button>
             <Modal isOpen={isModalOpen} onClose={handleClose}>
                 <h2>Fill Your Details</h2>
-                <form onSubmit={validateForm} className={styles.form}>
-                    <div className={styles.formItem}>
+                <form onSubmit={validateForm} className="form">
+                    <div className="formItem">
                         <label htmlFor="username">Username:</label>
                         <input type="text" name="username" id="username" />
                     </div>
 
-                    <div className={styles.formItem}>
+                    <div className="formItem">
                         <label htmlFor="email">Email Address:</label>
                         <input type="email" name="email" id="email" />
                     </div>
 
-                    <div className={styles.formItem}>
+                    <div className="formItem">
                         <label htmlFor="phone">Phone Number:</label>
                         <input type="text" name="phone" id="phone" />
                     </div>
 
-                    <div className={styles.formItem}>
+                    <div className="formItem">
                         <label htmlFor="dob">Date of Birth:</label>
                         <input type="date" name="dob" id="dob" />
                     </div>
 
-                    <button type="submit" className={styles['submit-button']}>
+                    <button type="submit" className="submit-button">
                         Submit
                     </button>
                 </form>
@@ -88,10 +88,10 @@ const Modal = ({ isOpen, onClose, children }) => {
     return (
         <div
             onClick={onClose}
-            className={styles.modal}
+            className="modal"
         >
             <div
-                className={styles['modal-content']}
+                className="modal-content"
                 onClick={(e) => e.stopPropagation()} // Prevent modal from closing when clicking inside content
             >
                 {children}
